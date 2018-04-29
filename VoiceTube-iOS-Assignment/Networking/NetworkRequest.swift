@@ -66,7 +66,7 @@ public extension NetworkRequest {
 	public var url: String { return baseURL + endpoint }
 	/// Access token to make the api request.
 	// public var accessToken: String { return ColorgyUserInformation.sharedInstance().userAccessToken ?? "" }
-    public var baseURL: String { return "https://api.coinmarketcap.com/v1/ticker" }
+    public var baseURL: String { return "https://api.voicetube.com" }
 	public var method: Alamofire.HTTPMethod { return .get }
 	public var encoding: Alamofire.ParameterEncoding { return JSONEncoding.default }
 	

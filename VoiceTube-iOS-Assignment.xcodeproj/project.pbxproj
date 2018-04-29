@@ -31,6 +31,9 @@
 		5179450C2095ACA900D45A55 /* RealmError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517944FA2095ACA900D45A55 /* RealmError.swift */; };
 		5179450D2095ACA900D45A55 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517944FB2095ACA900D45A55 /* RealmManager.swift */; };
 		5179450E2095ACA900D45A55 /* RealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517944FC2095ACA900D45A55 /* RealmObject.swift */; };
+		517945102095AF4700D45A55 /* GetItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5179450F2095AF4700D45A55 /* GetItemList.swift */; };
+		517945122095AF9800D45A55 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517945112095AF9800D45A55 /* Item.swift */; };
+		517945142095B17000D45A55 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517945132095B17000D45A55 /* ItemList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		517944FA2095ACA900D45A55 /* RealmError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmError.swift; sourceTree = "<group>"; };
 		517944FB2095ACA900D45A55 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		517944FC2095ACA900D45A55 /* RealmObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmObject.swift; sourceTree = "<group>"; };
+		5179450F2095AF4700D45A55 /* GetItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetItemList.swift; sourceTree = "<group>"; };
+		517945112095AF9800D45A55 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		517945132095B17000D45A55 /* ItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
 		76ABAE705891FB51049E6622 /* Pods-VoiceTube-iOS-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceTube-iOS-Assignment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceTube-iOS-Assignment/Pods-VoiceTube-iOS-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		BD068FE7D1D354328B06DA4D /* Pods_VoiceTube_iOS_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceTube_iOS_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -113,6 +119,9 @@
 				517944F92095ACA900D45A55 /* Realm */,
 				517944D42095AA9200D45A55 /* AppDelegate.swift */,
 				517944D62095AA9200D45A55 /* ViewController.swift */,
+				5179450F2095AF4700D45A55 /* GetItemList.swift */,
+				517945112095AF9800D45A55 /* Item.swift */,
+				517945132095B17000D45A55 /* ItemList.swift */,
 				517944D82095AA9200D45A55 /* Main.storyboard */,
 				517944DB2095AA9200D45A55 /* Assets.xcassets */,
 				517944DD2095AA9200D45A55 /* LaunchScreen.storyboard */,
@@ -336,9 +345,12 @@
 				517945022095ACA900D45A55 /* SwiftyJSONExtension.swift in Sources */,
 				517945052095ACA900D45A55 /* UIViewExtension.swift in Sources */,
 				517945042095ACA900D45A55 /* UIViewControllerExtension.swift in Sources */,
+				517945102095AF4700D45A55 /* GetItemList.swift in Sources */,
+				517945122095AF9800D45A55 /* Item.swift in Sources */,
 				517944FE2095ACA900D45A55 /* CGFloat+Int+UIView.swift in Sources */,
 				517945092095ACA900D45A55 /* JSONDecodable.swift in Sources */,
 				5179450A2095ACA900D45A55 /* NetworkClient.swift in Sources */,
+				517945142095B17000D45A55 /* ItemList.swift in Sources */,
 				5179450E2095ACA900D45A55 /* RealmObject.swift in Sources */,
 				5179450C2095ACA900D45A55 /* RealmError.swift in Sources */,
 				517945072095ACA900D45A55 /* ColorgyNavigationTransitioningDelegate.swift in Sources */,

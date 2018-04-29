@@ -25,7 +25,7 @@ public struct NetworkClient: NetworkClientType {
 		print("🔗", #function, "send request to url:", networkRequest.url)
         print("📩 method:", networkRequest.method)
         print("🚠 parameters:", networkRequest.parameters ?? [:])
-		
+        
 		request(networkRequest.url,
 		        method: networkRequest.method,
 		        parameters: networkRequest.parameters,
@@ -43,7 +43,7 @@ public struct NetworkClient: NetworkClientType {
 					reject(NetworkRequestError.unknownError)
 				}
 		}
-		
+        		
 		return promise
 	}
 	
