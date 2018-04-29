@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18EAC028C8DC8335D4BBE903 /* Pods_VoiceTube_iOS_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD068FE7D1D354328B06DA4D /* Pods_VoiceTube_iOS_Assignment.framework */; };
 		517944D52095AA9200D45A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517944D42095AA9200D45A55 /* AppDelegate.swift */; };
 		517944D72095AA9200D45A55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517944D62095AA9200D45A55 /* ViewController.swift */; };
 		517944DA2095AA9200D45A55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 517944D82095AA9200D45A55 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0AC9634DF668CBAC3B9CA6AA /* Pods-VoiceTube-iOS-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceTube-iOS-Assignment.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceTube-iOS-Assignment/Pods-VoiceTube-iOS-Assignment.release.xcconfig"; sourceTree = "<group>"; };
 		517944D12095AA9200D45A55 /* VoiceTube-iOS-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VoiceTube-iOS-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		517944D42095AA9200D45A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		517944D62095AA9200D45A55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		517944DB2095AA9200D45A55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		517944DE2095AA9200D45A55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		517944E02095AA9200D45A55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76ABAE705891FB51049E6622 /* Pods-VoiceTube-iOS-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceTube-iOS-Assignment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceTube-iOS-Assignment/Pods-VoiceTube-iOS-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
+		BD068FE7D1D354328B06DA4D /* Pods_VoiceTube_iOS_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceTube_iOS_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EAC028C8DC8335D4BBE903 /* Pods_VoiceTube_iOS_Assignment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E5D883655B47D60177B12A8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				76ABAE705891FB51049E6622 /* Pods-VoiceTube-iOS-Assignment.debug.xcconfig */,
+				0AC9634DF668CBAC3B9CA6AA /* Pods-VoiceTube-iOS-Assignment.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		517944C82095AA9200D45A55 = {
 			isa = PBXGroup;
 			children = (
 				517944D32095AA9200D45A55 /* VoiceTube-iOS-Assignment */,
 				517944D22095AA9200D45A55 /* Products */,
+				1E5D883655B47D60177B12A8 /* Pods */,
+				7F3F5817AF24C69928CEFF74 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = "VoiceTube-iOS-Assignment";
 			sourceTree = "<group>";
 		};
+		7F3F5817AF24C69928CEFF74 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD068FE7D1D354328B06DA4D /* Pods_VoiceTube_iOS_Assignment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 517944E32095AA9200D45A55 /* Build configuration list for PBXNativeTarget "VoiceTube-iOS-Assignment" */;
 			buildPhases = (
+				92F3213FFBD7966BA84A222D /* [CP] Check Pods Manifest.lock */,
 				517944CD2095AA9200D45A55 /* Sources */,
 				517944CE2095AA9200D45A55 /* Frameworks */,
 				517944CF2095AA9200D45A55 /* Resources */,
+				B3B961D358C91892901580AC /* [CP] Embed Pods Frameworks */,
+				7CCAB6C2C84D43076F381199 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,80 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7CCAB6C2C84D43076F381199 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VoiceTube-iOS-Assignment/Pods-VoiceTube-iOS-Assignment-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92F3213FFBD7966BA84A222D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VoiceTube-iOS-Assignment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3B961D358C91892901580AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VoiceTube-iOS-Assignment/Pods-VoiceTube-iOS-Assignment-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VoiceTube-iOS-Assignment/Pods-VoiceTube-iOS-Assignment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		517944CD2095AA9200D45A55 /* Sources */ = {
@@ -272,6 +373,7 @@
 		};
 		517944E42095AA9200D45A55 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76ABAE705891FB51049E6622 /* Pods-VoiceTube-iOS-Assignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +389,7 @@
 		};
 		517944E52095AA9200D45A55 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AC9634DF668CBAC3B9CA6AA /* Pods-VoiceTube-iOS-Assignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
