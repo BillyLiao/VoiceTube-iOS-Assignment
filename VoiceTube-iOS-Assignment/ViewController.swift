@@ -8,11 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+internal final class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        GetItemList().perform().then { (list) in
+        }
     }
 
     override func didReceiveMemoryWarning() {
