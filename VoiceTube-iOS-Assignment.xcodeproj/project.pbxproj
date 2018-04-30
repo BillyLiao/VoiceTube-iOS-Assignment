@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		18EAC028C8DC8335D4BBE903 /* Pods_VoiceTube_iOS_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD068FE7D1D354328B06DA4D /* Pods_VoiceTube_iOS_Assignment.framework */; };
+		5153444420970588004988C6 /* SDWebImage+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153444320970588004988C6 /* SDWebImage+UIImageView.swift */; };
+		51534447209709BF004988C6 /* VideoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51534445209709BF004988C6 /* VideoListTableViewCell.swift */; };
+		51534448209709BF004988C6 /* VideoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51534446209709BF004988C6 /* VideoListTableViewCell.xib */; };
 		517944D52095AA9200D45A55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517944D42095AA9200D45A55 /* AppDelegate.swift */; };
 		517944D72095AA9200D45A55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517944D62095AA9200D45A55 /* ViewController.swift */; };
 		517944DA2095AA9200D45A55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 517944D82095AA9200D45A55 /* Main.storyboard */; };
@@ -34,10 +37,14 @@
 		517945102095AF4700D45A55 /* GetItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5179450F2095AF4700D45A55 /* GetItemList.swift */; };
 		517945122095AF9800D45A55 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517945112095AF9800D45A55 /* Item.swift */; };
 		517945142095B17000D45A55 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517945132095B17000D45A55 /* ItemList.swift */; };
+		517945162095BE4700D45A55 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517945152095BE4700D45A55 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0AC9634DF668CBAC3B9CA6AA /* Pods-VoiceTube-iOS-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceTube-iOS-Assignment.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceTube-iOS-Assignment/Pods-VoiceTube-iOS-Assignment.release.xcconfig"; sourceTree = "<group>"; };
+		5153444320970588004988C6 /* SDWebImage+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SDWebImage+UIImageView.swift"; sourceTree = "<group>"; };
+		51534445209709BF004988C6 /* VideoListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListTableViewCell.swift; sourceTree = "<group>"; };
+		51534446209709BF004988C6 /* VideoListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoListTableViewCell.xib; sourceTree = "<group>"; };
 		517944D12095AA9200D45A55 /* VoiceTube-iOS-Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VoiceTube-iOS-Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		517944D42095AA9200D45A55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		517944D62095AA9200D45A55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +73,7 @@
 		5179450F2095AF4700D45A55 /* GetItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetItemList.swift; sourceTree = "<group>"; };
 		517945112095AF9800D45A55 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		517945132095B17000D45A55 /* ItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
+		517945152095BE4700D45A55 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		76ABAE705891FB51049E6622 /* Pods-VoiceTube-iOS-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceTube-iOS-Assignment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceTube-iOS-Assignment/Pods-VoiceTube-iOS-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		BD068FE7D1D354328B06DA4D /* Pods_VoiceTube_iOS_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceTube_iOS_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -119,6 +127,9 @@
 				517944F92095ACA900D45A55 /* Realm */,
 				517944D42095AA9200D45A55 /* AppDelegate.swift */,
 				517944D62095AA9200D45A55 /* ViewController.swift */,
+				51534445209709BF004988C6 /* VideoListTableViewCell.swift */,
+				51534446209709BF004988C6 /* VideoListTableViewCell.xib */,
+				517945152095BE4700D45A55 /* MainViewModel.swift */,
 				5179450F2095AF4700D45A55 /* GetItemList.swift */,
 				517945112095AF9800D45A55 /* Item.swift */,
 				517945132095B17000D45A55 /* ItemList.swift */,
@@ -149,6 +160,7 @@
 				517944EE2095ACA800D45A55 /* UITableViewExtension.swift */,
 				517944EF2095ACA800D45A55 /* UIViewControllerExtension.swift */,
 				517944F02095ACA800D45A55 /* UIViewExtension.swift */,
+				5153444320970588004988C6 /* SDWebImage+UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -254,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				517944DF2095AA9200D45A55 /* LaunchScreen.storyboard in Resources */,
+				51534448209709BF004988C6 /* VideoListTableViewCell.xib in Resources */,
 				517944DC2095AA9200D45A55 /* Assets.xcassets in Resources */,
 				517944DA2095AA9200D45A55 /* Main.storyboard in Resources */,
 			);
@@ -341,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				517944D72095AA9200D45A55 /* ViewController.swift in Sources */,
+				51534447209709BF004988C6 /* VideoListTableViewCell.swift in Sources */,
 				517945082095ACA900D45A55 /* Navigable.swift in Sources */,
 				517945022095ACA900D45A55 /* SwiftyJSONExtension.swift in Sources */,
 				517945052095ACA900D45A55 /* UIViewExtension.swift in Sources */,
@@ -349,6 +363,7 @@
 				517945122095AF9800D45A55 /* Item.swift in Sources */,
 				517944FE2095ACA900D45A55 /* CGFloat+Int+UIView.swift in Sources */,
 				517945092095ACA900D45A55 /* JSONDecodable.swift in Sources */,
+				5153444420970588004988C6 /* SDWebImage+UIImageView.swift in Sources */,
 				5179450A2095ACA900D45A55 /* NetworkClient.swift in Sources */,
 				517945142095B17000D45A55 /* ItemList.swift in Sources */,
 				5179450E2095ACA900D45A55 /* RealmObject.swift in Sources */,
@@ -363,6 +378,7 @@
 				517944FF2095ACA900D45A55 /* CustomColor.swift in Sources */,
 				517944D52095AA9200D45A55 /* AppDelegate.swift in Sources */,
 				5179450B2095ACA900D45A55 /* NetworkRequest.swift in Sources */,
+				517945162095BE4700D45A55 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
