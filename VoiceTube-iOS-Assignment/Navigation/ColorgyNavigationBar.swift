@@ -13,14 +13,17 @@ import SnapKit
 	@objc optional func colorgyNavigationBarBackButtonClicked()
     @objc optional func colorgyNavigationBarRightTitleButtonClicked()
     @objc optional func colorgyNavigationBarLeftTitleButtonClicked()
+    @objc optional func colorgyNavigationBarSettingsButtonClicked()
 }
 
 public enum ColorgyNavigationBarButtonType {
     case back
+    case settings
     
     var data: (image: UIImage, selector: Selector) {
         switch self {
-        case .back : return (#imageLiteral(resourceName: "BackButton"), #selector(ColorgyNavigationBar.backButtonClicked))
+        case .back : return (#imageLiteral(resourceName: "back"), #selector(ColorgyNavigationBar.backButtonClicked))
+        case .settings : return (#imageLiteral(resourceName: "settings"), #selector(ColorgyNavigationBar.settingsButtonClicked))
         }
     }
 }
@@ -62,7 +65,7 @@ open class ColorgyNavigationBar: UIView {
 	// MARK: - Init
 	public init() {
 		super.init(frame: CGRect(origin: CGPoint.zero, size: CGSize(width: UIScreen.main.bounds.width, height: 64)))
-		backgroundColor = CustomColor.lightBackgroundColor
+		backgroundColor = UIColor.white
         titleLabel = getTitleLabel()
         
         addSubview(titleLabel)
@@ -207,6 +210,10 @@ open class ColorgyNavigationBar: UIView {
 	@objc fileprivate func backButtonClicked() {
 		delegate?.colorgyNavigationBarBackButtonClicked?()
 	}
+    
+    @objc fileprivate func settingsButtonClicked() {
+        delegate?.colorgyNavigationBarSettingsButtonClicked?()
+    }
 	
 	// MARK: - Methods
 	open func transparentBar() {
