@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "476B3DBA4613B5CB2DFE45772E318A01"
+               BlueprintIdentifier = "A38B9158A9F5CB90F707F450471A9EA3"
                BlueprintName = "Pods-VoiceTube-iOS-Assignment"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "Pods-VoiceTube-iOS-Assignment.framework">

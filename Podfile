@@ -16,5 +16,6 @@ target 'VoiceTube-iOS-Assignment' do
   pod 'RxCocoa'
   pod 'RxDataSources'
   pod 'RealmSwift'
+  pod 'SwiftyUserDefaults'
   
 end
