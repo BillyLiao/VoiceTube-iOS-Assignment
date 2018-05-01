@@ -8,11 +8,17 @@
 
 import UIKit
 import SnapKit
+import SwiftyUserDefaults
+
+protocol TapActionCellDelegate: class {
+    func tapActionCellTimeDidChanged(cell: TapActionCell, to date: Date)
+}
 
 internal final class TapActionCell: UITableViewCell {
 
     // MARK: - View Components
     override var inputView: UIView? {
+        datePicker.setDate(Defaults[.dailyRemindTime]!, animated: false)
         return datePicker
     }
     
@@ -28,6 +34,9 @@ internal final class TapActionCell: UITableViewCell {
     let datePicker: UIDatePicker = UIDatePicker()
     let titleLabel: UILabel = UILabel()
     let detailLabel: UILabel = UILabel()
+    
+    // MARK: - Delegate
+    weak var delegate: TapActionCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -75,6 +84,7 @@ internal final class TapActionCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm a"
         detailLabel.text = dateFormatter.string(from: datePicker.date)
+        delegate?.tapActionCellTimeDidChanged(cell: self, to: datePicker.date)
         
         self.resignFirstResponder()
     }
