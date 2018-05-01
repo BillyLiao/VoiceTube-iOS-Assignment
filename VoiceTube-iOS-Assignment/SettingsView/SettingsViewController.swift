@@ -22,8 +22,6 @@ internal final class SettingsViewController: UIViewController, Navigable {
      SwitchRow.init(title: "推薦影片提醒", switchValue: Defaults[.recommendationNotifiable], action: { row in Defaults[.recommendationNotifiable] = (row as! SwitchRow).switchValue }),
      TimeRow.init(title: "學習通知", date: Defaults[.dailyRemindTime]!, action: { row in Defaults[.dailyRemindTime] = (row as! TimeRow).date })]
     
-
-    
     // MARK: - Delegate
     var navigationTransitionDelegate: ColorgyNavigationTransitioningDelegate?
     
@@ -80,9 +78,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         (cell as? SwitchActionCell)?.set(title: row.title, isOn: (row as? SwitchRow)?.switchValue ?? true)
         (cell as? SwitchActionCell)?.delegate = self
         
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm a"
-        (cell as? TapActionCell)?.set(title: row.title, detail: dateFormatter.string(from: (row as? TimeRow)?.date ?? Date()))
+        (cell as? TapActionCell)?.set(title: row.title, date: (row as? TimeRow)?.date ?? Date())
         (cell as? TapActionCell)?.delegate = self
         
         return cell
