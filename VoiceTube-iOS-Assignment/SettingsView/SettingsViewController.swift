@@ -22,8 +22,6 @@ internal final class SettingsViewController: UIViewController, Navigable {
      SwitchRow.init(title: "推薦影片提醒", switchValue: Defaults[.recommendationNotifiable], action: { row in Defaults[.recommendationNotifiable] = (row as! SwitchRow).switchValue }),
      TimeRow.init(title: "學習通知", date: Defaults[.dailyRemindTime]!, action: { row in Defaults[.dailyRemindTime] = (row as! TimeRow).date })]
     
-
-    
     // MARK: - Delegate
     var navigationTransitionDelegate: ColorgyNavigationTransitioningDelegate?
     
@@ -46,6 +44,7 @@ internal final class SettingsViewController: UIViewController, Navigable {
     func configureNavigationBar() {
         view.addSubview(navigationBar)
         navigationBar.setButton(at: .left, type: .back)
+        navigationBar.title = "Settings"
         navigationBar.delegate = self
     }
     
@@ -78,12 +77,8 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         let row = tableContent[indexPath.row]
         let cell = tableView.dequeueReusableCell(of: row.cellType, for: indexPath)!
         (cell as? SwitchActionCell)?.set(title: row.title, isOn: (row as? SwitchRow)?.switchValue ?? true)
-        (cell as? SwitchActionCell)?.delegate = self
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm a"
-        (cell as? TapActionCell)?.set(title: row.title, detail: dateFormatter.string(from: (row as? TimeRow)?.date ?? Date()))
-        (cell as? TapActionCell)?.delegate = self
+        (cell as? TapActionCell)?.set(title: row.title, date: (row as? TimeRow)?.date ?? Date())
+        (cell as? SettingCellType)?.delegate = self
         
         return cell
     }
@@ -92,24 +87,12 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         (tableView.cellForRow(at: indexPath) as? TapActionCell)?.becomeFirstResponder()
     }
 }
-
-extension SettingsViewController: SwitchActionCellDelegate {
-    func switchActionCellSwitch(cell: SwitchActionCell, isOn: Bool) {
+extension SettingsViewController: SettingCellDelegate {
+    func settingCellValueChanged(cell: UITableViewCell) {
         guard let rowIndex = tableView.indexPath(for: cell)?.row else { return }
-        if let row = tableContent[rowIndex] as? SwitchRow {
-            row.switchValue = isOn
-            row.action?(row)
-        }
+        let row = tableContent[rowIndex]
+        (row as? SwitchRow)?.switchValue = (cell as? SwitchActionCell)?.switchValue ?? true
+        (row as? TimeRow)?.date = (cell as? TapActionCell)?.dateValue ?? Date()
+        row.action?(row)
     }
 }
-
-extension SettingsViewController: TapActionCellDelegate {
-    func tapActionCellTimeDidChanged(cell: TapActionCell, to date: Date) {
-        guard let rowIndex = tableView.indexPath(for: cell)?.row else { return }
-        if let row = tableContent[rowIndex] as? TimeRow {
-            row.date = date
-            row.action?(row)
-        }
-    }
-}
-

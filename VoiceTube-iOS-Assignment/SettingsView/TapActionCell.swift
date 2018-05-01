@@ -10,18 +10,13 @@ import UIKit
 import SnapKit
 import SwiftyUserDefaults
 
-protocol TapActionCellDelegate: class {
-    func tapActionCellTimeDidChanged(cell: TapActionCell, to date: Date)
-}
-
-internal final class TapActionCell: UITableViewCell {
+internal final class TapActionCell: UITableViewCell, SettingCellType {
 
     // MARK: - View Components
     override var inputView: UIView? {
         datePicker.setDate(Defaults[.dailyRemindTime]!, animated: false)
         return datePicker
     }
-    
     override var inputAccessoryView: UIView? {
         let toolBar = UIToolbar.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
         toolBar.barTintColor = UIColor.white
@@ -32,16 +27,25 @@ internal final class TapActionCell: UITableViewCell {
         return toolBar
     }
     let datePicker: UIDatePicker = UIDatePicker()
+    let dateFormatter: DateFormatter = DateFormatter()
     let titleLabel: UILabel = UILabel()
     let detailLabel: UILabel = UILabel()
     
     // MARK: - Delegate
-    weak var delegate: TapActionCellDelegate?
+    weak var delegate: SettingCellDelegate?
+    
+    public private(set) var dateValue: Date = Date() {
+        didSet {
+            delegate?.settingCellValueChanged(cell: self)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         selectionStyle = .none
+        
+        dateFormatter.dateFormat = "HH:mm a"
         
         configureTitleLabel()
         configureDetailLabel()
@@ -74,17 +78,15 @@ internal final class TapActionCell: UITableViewCell {
         datePicker.backgroundColor = UIColor.white
     }
     
-    public func set(title: String, detail: String) {
+    public func set(title: String, date: Date) {
         titleLabel.text = title
-        detailLabel.text = detail
+        detailLabel.text = dateFormatter.string(from: date)
     }
     
     // MARK: - Input View Handler
     @objc func done() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm a"
         detailLabel.text = dateFormatter.string(from: datePicker.date)
-        delegate?.tapActionCellTimeDidChanged(cell: self, to: datePicker.date)
+        dateValue = datePicker.date
         
         self.resignFirstResponder()
     }
