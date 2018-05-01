@@ -16,6 +16,7 @@
 		512FE61920976B62006662DF /* CustomUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512FE61820976B62006662DF /* CustomUserDefaults.swift */; };
 		512FE61F20983B33006662DF /* SettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512FE61E20983B33006662DF /* SettingRow.swift */; };
 		512FE623209861D8006662DF /* SettingCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512FE622209861D8006662DF /* SettingCellType.swift */; };
+		512FE6252098652D006662DF /* ItemRealmObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512FE6242098652D006662DF /* ItemRealmObject.swift */; };
 		5153444420970588004988C6 /* SDWebImage+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153444320970588004988C6 /* SDWebImage+UIImageView.swift */; };
 		51534447209709BF004988C6 /* VideoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51534445209709BF004988C6 /* VideoListTableViewCell.swift */; };
 		51534448209709BF004988C6 /* VideoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51534446209709BF004988C6 /* VideoListTableViewCell.xib */; };
@@ -58,6 +59,7 @@
 		512FE61820976B62006662DF /* CustomUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserDefaults.swift; sourceTree = "<group>"; };
 		512FE61E20983B33006662DF /* SettingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRow.swift; sourceTree = "<group>"; };
 		512FE622209861D8006662DF /* SettingCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellType.swift; sourceTree = "<group>"; };
+		512FE6242098652D006662DF /* ItemRealmObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRealmObject.swift; sourceTree = "<group>"; };
 		5153444320970588004988C6 /* SDWebImage+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SDWebImage+UIImageView.swift"; sourceTree = "<group>"; };
 		51534445209709BF004988C6 /* VideoListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListTableViewCell.swift; sourceTree = "<group>"; };
 		51534446209709BF004988C6 /* VideoListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoListTableViewCell.xib; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				5179450F2095AF4700D45A55 /* GetItemList.swift */,
 				517945112095AF9800D45A55 /* Item.swift */,
 				517945132095B17000D45A55 /* ItemList.swift */,
+				512FE6242098652D006662DF /* ItemRealmObject.swift */,
 				512FE60120976381006662DF /* SettingsView */,
 				517944D82095AA9200D45A55 /* Main.storyboard */,
 				517944DB2095AA9200D45A55 /* Assets.xcassets */,
@@ -411,6 +414,7 @@
 				517945062095ACA900D45A55 /* ColorgyNavigationBar.swift in Sources */,
 				5179450D2095ACA900D45A55 /* RealmManager.swift in Sources */,
 				517945002095ACA900D45A55 /* NumberExtension.swift in Sources */,
+				512FE6252098652D006662DF /* ItemRealmObject.swift in Sources */,
 				517944FD2095ACA900D45A55 /* Queue.swift in Sources */,
 				517945012095ACA900D45A55 /* Sequence+GroupBy.swift in Sources */,
 				512FE6142097646C006662DF /* TapActionCell.swift in Sources */,
