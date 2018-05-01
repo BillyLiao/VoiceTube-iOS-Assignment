@@ -23,20 +23,22 @@ internal class SettingRow {
 }
 
 class SwitchRow: SettingRow {
-    var switchValue: Bool = true
+    typealias T = Bool
+    var data: T = true
     
-    init(title: String, cellType: UITableViewCell.Type = SwitchActionCell.self, switchValue: Bool, action: ((SettingRow)->())?) {
+    init(title: String, cellType: UITableViewCell.Type = SwitchActionCell.self, data: T, action: ((SettingRow)->())?) {
         super.init(title: title, cellType: cellType, action: action)
-        self.switchValue = switchValue
+        self.data = data
     }
 }
 
 class TimeRow: SettingRow {
-    var date: Date = Date()
+    typealias T = Date
+    var data: T = Date()
     
-    init(title: String, cellType: UITableViewCell.Type = TapActionCell.self, date: Date, action: ((SettingRow)->())?) {
+    init(title: String, cellType: UITableViewCell.Type = TimeSettingCell.self, data: T, action: ((SettingRow)->())?) {
         super.init(title: title, cellType: cellType, action: action)
-        self.date = date
+        self.data = data
     }
 }
 

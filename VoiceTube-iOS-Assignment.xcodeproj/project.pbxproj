@@ -11,8 +11,6 @@
 		512FE603209763FE006662DF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512FE602209763FE006662DF /* SettingsViewController.swift */; };
 		512FE6102097645B006662DF /* SwitchActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512FE60E2097645B006662DF /* SwitchActionCell.swift */; };
 		512FE6112097645B006662DF /* SwitchActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 512FE60F2097645B006662DF /* SwitchActionCell.xib */; };
-		512FE6142097646C006662DF /* TapActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512FE6122097646C006662DF /* TapActionCell.swift */; };
-		512FE6152097646C006662DF /* TapActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 512FE6132097646C006662DF /* TapActionCell.xib */; };
 		512FE61920976B62006662DF /* CustomUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512FE61820976B62006662DF /* CustomUserDefaults.swift */; };
 		512FE61F20983B33006662DF /* SettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512FE61E20983B33006662DF /* SettingRow.swift */; };
 		512FE623209861D8006662DF /* SettingCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512FE622209861D8006662DF /* SettingCellType.swift */; };
@@ -47,6 +45,8 @@
 		517945122095AF9800D45A55 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517945112095AF9800D45A55 /* Item.swift */; };
 		517945142095B17000D45A55 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517945132095B17000D45A55 /* ItemList.swift */; };
 		517945162095BE4700D45A55 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517945152095BE4700D45A55 /* MainViewModel.swift */; };
+		5192A01820989A7D0034ABB8 /* TimeSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5192A01620989A7D0034ABB8 /* TimeSettingCell.swift */; };
+		5192A01920989A7D0034ABB8 /* TimeSettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5192A01720989A7D0034ABB8 /* TimeSettingCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,8 +54,6 @@
 		512FE602209763FE006662DF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		512FE60E2097645B006662DF /* SwitchActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchActionCell.swift; sourceTree = "<group>"; };
 		512FE60F2097645B006662DF /* SwitchActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchActionCell.xib; sourceTree = "<group>"; };
-		512FE6122097646C006662DF /* TapActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapActionCell.swift; sourceTree = "<group>"; };
-		512FE6132097646C006662DF /* TapActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TapActionCell.xib; sourceTree = "<group>"; };
 		512FE61820976B62006662DF /* CustomUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserDefaults.swift; sourceTree = "<group>"; };
 		512FE61E20983B33006662DF /* SettingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRow.swift; sourceTree = "<group>"; };
 		512FE622209861D8006662DF /* SettingCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellType.swift; sourceTree = "<group>"; };
@@ -92,6 +90,8 @@
 		517945112095AF9800D45A55 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		517945132095B17000D45A55 /* ItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
 		517945152095BE4700D45A55 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		5192A01620989A7D0034ABB8 /* TimeSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSettingCell.swift; sourceTree = "<group>"; };
+		5192A01720989A7D0034ABB8 /* TimeSettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeSettingCell.xib; sourceTree = "<group>"; };
 		76ABAE705891FB51049E6622 /* Pods-VoiceTube-iOS-Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceTube-iOS-Assignment.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceTube-iOS-Assignment/Pods-VoiceTube-iOS-Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		BD068FE7D1D354328B06DA4D /* Pods_VoiceTube_iOS_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VoiceTube_iOS_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -121,8 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				512FE602209763FE006662DF /* SettingsViewController.swift */,
-				512FE6122097646C006662DF /* TapActionCell.swift */,
-				512FE6132097646C006662DF /* TapActionCell.xib */,
+				5192A01620989A7D0034ABB8 /* TimeSettingCell.swift */,
+				5192A01720989A7D0034ABB8 /* TimeSettingCell.xib */,
 				512FE60E2097645B006662DF /* SwitchActionCell.swift */,
 				512FE60F2097645B006662DF /* SwitchActionCell.xib */,
 				512FE61820976B62006662DF /* CustomUserDefaults.swift */,
@@ -303,9 +303,9 @@
 				517944DF2095AA9200D45A55 /* LaunchScreen.storyboard in Resources */,
 				51534448209709BF004988C6 /* VideoListTableViewCell.xib in Resources */,
 				512FE6112097645B006662DF /* SwitchActionCell.xib in Resources */,
-				512FE6152097646C006662DF /* TapActionCell.xib in Resources */,
 				517944DC2095AA9200D45A55 /* Assets.xcassets in Resources */,
 				517944DA2095AA9200D45A55 /* Main.storyboard in Resources */,
+				5192A01920989A7D0034ABB8 /* TimeSettingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +409,7 @@
 				517945142095B17000D45A55 /* ItemList.swift in Sources */,
 				5179450E2095ACA900D45A55 /* RealmObject.swift in Sources */,
 				512FE623209861D8006662DF /* SettingCellType.swift in Sources */,
+				5192A01820989A7D0034ABB8 /* TimeSettingCell.swift in Sources */,
 				5179450C2095ACA900D45A55 /* RealmError.swift in Sources */,
 				517945072095ACA900D45A55 /* ColorgyNavigationTransitioningDelegate.swift in Sources */,
 				517945062095ACA900D45A55 /* ColorgyNavigationBar.swift in Sources */,
@@ -417,7 +418,6 @@
 				512FE6252098652D006662DF /* ItemRealmObject.swift in Sources */,
 				517944FD2095ACA900D45A55 /* Queue.swift in Sources */,
 				517945012095ACA900D45A55 /* Sequence+GroupBy.swift in Sources */,
-				512FE6142097646C006662DF /* TapActionCell.swift in Sources */,
 				512FE6102097645B006662DF /* SwitchActionCell.swift in Sources */,
 				517945032095ACA900D45A55 /* UITableViewExtension.swift in Sources */,
 				517944FF2095ACA900D45A55 /* CustomColor.swift in Sources */,

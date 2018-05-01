@@ -1,8 +1,8 @@
 //
-//  TapActionCell.swift
+//  TimeSettingCell.swift
 //  VoiceTube-iOS-Assignment
 //
-//  Created by 廖慶麟 on 2018/4/30.
+//  Created by 廖慶麟 on 2018/5/1.
 //  Copyright © 2018年 廖慶麟. All rights reserved.
 //
 
@@ -10,8 +10,8 @@ import UIKit
 import SnapKit
 import SwiftyUserDefaults
 
-internal final class TapActionCell: UITableViewCell, SettingCellType {
-
+internal final class TimeSettingCell: UITableViewCell, SettingCellType {
+    
     // MARK: - View Components
     override var inputView: UIView? {
         datePicker.setDate(Defaults[.dailyRemindTime]!, animated: false)
@@ -27,13 +27,15 @@ internal final class TapActionCell: UITableViewCell, SettingCellType {
         return toolBar
     }
     let datePicker: UIDatePicker = UIDatePicker()
-    let dateFormatter: DateFormatter = DateFormatter()
     let titleLabel: UILabel = UILabel()
     let detailLabel: UILabel = UILabel()
+    
+    let dateFormatter: DateFormatter = DateFormatter()
     
     // MARK: - Delegate
     weak var delegate: SettingCellDelegate?
     
+    // MARK: - Key Datasource
     public private(set) var dateValue: Date = Date() {
         didSet {
             delegate?.settingCellValueChanged(cell: self)
@@ -51,11 +53,10 @@ internal final class TapActionCell: UITableViewCell, SettingCellType {
         configureDetailLabel()
         configureDatePicker()
     }
-
+    
     // MARK: - View Configuration
     private func configureTitleLabel() {
         addSubview(titleLabel)
-        
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalToSuperview().offset(16)
             make.centerY.equalToSuperview()
@@ -95,3 +96,4 @@ internal final class TapActionCell: UITableViewCell, SettingCellType {
         return true
     }
 }
+

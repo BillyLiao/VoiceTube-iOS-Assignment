@@ -15,15 +15,16 @@ internal final class SwitchActionCell: UITableViewCell, SettingCellType {
     // MARK: - View Components
     let titleLabel: UILabel = UILabel()
     let switchButton: UISwitch = UISwitch()
+
+    // MARK: - Delegate
+    weak var delegate: SettingCellDelegate?
     
+    // MARK: - Key DataSource
     public var switchValue: Bool = true {
         didSet {
             delegate?.settingCellValueChanged(cell: self)
         }
     }
-    
-    // MARK: - Delegate
-    weak var delegate: SettingCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
