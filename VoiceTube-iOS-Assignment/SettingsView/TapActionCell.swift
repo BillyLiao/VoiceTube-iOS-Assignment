@@ -10,18 +10,13 @@ import UIKit
 import SnapKit
 import SwiftyUserDefaults
 
-protocol TapActionCellDelegate: class {
-    func tapActionCellTimeDidChanged(cell: TapActionCell, to date: Date)
-}
-
-internal final class TapActionCell: UITableViewCell {
+internal final class TapActionCell: UITableViewCell, SettingCellType {
 
     // MARK: - View Components
     override var inputView: UIView? {
         datePicker.setDate(Defaults[.dailyRemindTime]!, animated: false)
         return datePicker
     }
-    
     override var inputAccessoryView: UIView? {
         let toolBar = UIToolbar.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
         toolBar.barTintColor = UIColor.white
@@ -37,7 +32,13 @@ internal final class TapActionCell: UITableViewCell {
     let detailLabel: UILabel = UILabel()
     
     // MARK: - Delegate
-    weak var delegate: TapActionCellDelegate?
+    weak var delegate: SettingCellDelegate?
+    
+    public private(set) var dateValue: Date = Date() {
+        didSet {
+            delegate?.settingCellValueChanged(cell: self)
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -85,7 +86,7 @@ internal final class TapActionCell: UITableViewCell {
     // MARK: - Input View Handler
     @objc func done() {
         detailLabel.text = dateFormatter.string(from: datePicker.date)
-        delegate?.tapActionCellTimeDidChanged(cell: self, to: datePicker.date)
+        dateValue = datePicker.date
         
         self.resignFirstResponder()
     }

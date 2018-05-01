@@ -10,11 +10,7 @@ import UIKit
 import SnapKit
 import SwiftyUserDefaults
 
-protocol SwitchActionCellDelegate: class {
-    func switchActionCellSwitch(cell: SwitchActionCell, isOn: Bool)
-}
-
-internal final class SwitchActionCell: UITableViewCell {
+internal final class SwitchActionCell: UITableViewCell, SettingCellType {
 
     // MARK: - View Components
     let titleLabel: UILabel = UILabel()
@@ -22,12 +18,12 @@ internal final class SwitchActionCell: UITableViewCell {
     
     public var switchValue: Bool = true {
         didSet {
-            delegate?.switchActionCellSwitch(cell: self, isOn: switchValue)
+            delegate?.settingCellValueChanged(cell: self)
         }
     }
     
     // MARK: - Delegate
-    weak var delegate: SwitchActionCellDelegate?
+    weak var delegate: SettingCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -65,6 +61,7 @@ internal final class SwitchActionCell: UITableViewCell {
         switchButton.isOn = isOn
     }
     
+    // MARK: - Handler
     @objc func switchValueChanged() {
         switchValue = switchButton.isOn
     }
