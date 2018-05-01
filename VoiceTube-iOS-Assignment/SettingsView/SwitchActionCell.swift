@@ -10,11 +10,24 @@ import UIKit
 import SnapKit
 import SwiftyUserDefaults
 
+protocol SwitchActionCellDelegate: class {
+    func switchActionCellSwitch(cell: SwitchActionCell, isOn: Bool)
+}
+
 internal final class SwitchActionCell: UITableViewCell {
 
     // MARK: - View Components
     let titleLabel: UILabel = UILabel()
     let switchButton: UISwitch = UISwitch()
+    
+    public var switchValue: Bool = true {
+        didSet {
+            delegate?.switchActionCellSwitch(cell: self, isOn: switchValue)
+        }
+    }
+    
+    // MARK: - Delegate
+    weak var delegate: SwitchActionCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,6 +52,7 @@ internal final class SwitchActionCell: UITableViewCell {
         addSubview(switchButton)
         
         switchButton.onTintColor = tintColor
+        switchButton.addTarget(self, action: #selector(switchValueChanged), for: .valueChanged)
         
         switchButton.snp.makeConstraints { (make) in
             make.right.equalToSuperview().inset(16)
@@ -49,5 +63,9 @@ internal final class SwitchActionCell: UITableViewCell {
     public func set(title: String, isOn: Bool) {
         titleLabel.text = title
         switchButton.isOn = isOn
+    }
+    
+    @objc func switchValueChanged() {
+        switchValue = switchButton.isOn
     }
 }
