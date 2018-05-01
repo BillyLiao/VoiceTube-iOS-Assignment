@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		18EAC028C8DC8335D4BBE903 /* Pods_VoiceTube_iOS_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD068FE7D1D354328B06DA4D /* Pods_VoiceTube_iOS_Assignment.framework */; };
+		512FE603209763FE006662DF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512FE602209763FE006662DF /* SettingsViewController.swift */; };
+		512FE6102097645B006662DF /* SwitchActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512FE60E2097645B006662DF /* SwitchActionCell.swift */; };
+		512FE6112097645B006662DF /* SwitchActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 512FE60F2097645B006662DF /* SwitchActionCell.xib */; };
+		512FE6142097646C006662DF /* TapActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512FE6122097646C006662DF /* TapActionCell.swift */; };
+		512FE6152097646C006662DF /* TapActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 512FE6132097646C006662DF /* TapActionCell.xib */; };
+		512FE61920976B62006662DF /* CustomUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512FE61820976B62006662DF /* CustomUserDefaults.swift */; };
+		512FE61F20983B33006662DF /* SettingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512FE61E20983B33006662DF /* SettingRow.swift */; };
 		5153444420970588004988C6 /* SDWebImage+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5153444320970588004988C6 /* SDWebImage+UIImageView.swift */; };
 		51534447209709BF004988C6 /* VideoListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51534445209709BF004988C6 /* VideoListTableViewCell.swift */; };
 		51534448209709BF004988C6 /* VideoListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 51534446209709BF004988C6 /* VideoListTableViewCell.xib */; };
@@ -42,6 +49,13 @@
 
 /* Begin PBXFileReference section */
 		0AC9634DF668CBAC3B9CA6AA /* Pods-VoiceTube-iOS-Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VoiceTube-iOS-Assignment.release.xcconfig"; path = "Pods/Target Support Files/Pods-VoiceTube-iOS-Assignment/Pods-VoiceTube-iOS-Assignment.release.xcconfig"; sourceTree = "<group>"; };
+		512FE602209763FE006662DF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		512FE60E2097645B006662DF /* SwitchActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchActionCell.swift; sourceTree = "<group>"; };
+		512FE60F2097645B006662DF /* SwitchActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchActionCell.xib; sourceTree = "<group>"; };
+		512FE6122097646C006662DF /* TapActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapActionCell.swift; sourceTree = "<group>"; };
+		512FE6132097646C006662DF /* TapActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TapActionCell.xib; sourceTree = "<group>"; };
+		512FE61820976B62006662DF /* CustomUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserDefaults.swift; sourceTree = "<group>"; };
+		512FE61E20983B33006662DF /* SettingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRow.swift; sourceTree = "<group>"; };
 		5153444320970588004988C6 /* SDWebImage+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SDWebImage+UIImageView.swift"; sourceTree = "<group>"; };
 		51534445209709BF004988C6 /* VideoListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListTableViewCell.swift; sourceTree = "<group>"; };
 		51534446209709BF004988C6 /* VideoListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoListTableViewCell.xib; sourceTree = "<group>"; };
@@ -99,6 +113,20 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		512FE60120976381006662DF /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				512FE602209763FE006662DF /* SettingsViewController.swift */,
+				512FE6122097646C006662DF /* TapActionCell.swift */,
+				512FE6132097646C006662DF /* TapActionCell.xib */,
+				512FE60E2097645B006662DF /* SwitchActionCell.swift */,
+				512FE60F2097645B006662DF /* SwitchActionCell.xib */,
+				512FE61820976B62006662DF /* CustomUserDefaults.swift */,
+				512FE61E20983B33006662DF /* SettingRow.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
 		517944C82095AA9200D45A55 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +161,7 @@
 				5179450F2095AF4700D45A55 /* GetItemList.swift */,
 				517945112095AF9800D45A55 /* Item.swift */,
 				517945132095B17000D45A55 /* ItemList.swift */,
+				512FE60120976381006662DF /* SettingsView */,
 				517944D82095AA9200D45A55 /* Main.storyboard */,
 				517944DB2095AA9200D45A55 /* Assets.xcassets */,
 				517944DD2095AA9200D45A55 /* LaunchScreen.storyboard */,
@@ -267,6 +296,8 @@
 			files = (
 				517944DF2095AA9200D45A55 /* LaunchScreen.storyboard in Resources */,
 				51534448209709BF004988C6 /* VideoListTableViewCell.xib in Resources */,
+				512FE6112097645B006662DF /* SwitchActionCell.xib in Resources */,
+				512FE6152097646C006662DF /* TapActionCell.xib in Resources */,
 				517944DC2095AA9200D45A55 /* Assets.xcassets in Resources */,
 				517944DA2095AA9200D45A55 /* Main.storyboard in Resources */,
 			);
@@ -326,6 +357,7 @@
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUserDefaults/SwiftyUserDefaults.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -340,6 +372,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUserDefaults.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -358,6 +391,8 @@
 				517945082095ACA900D45A55 /* Navigable.swift in Sources */,
 				517945022095ACA900D45A55 /* SwiftyJSONExtension.swift in Sources */,
 				517945052095ACA900D45A55 /* UIViewExtension.swift in Sources */,
+				512FE61F20983B33006662DF /* SettingRow.swift in Sources */,
+				512FE61920976B62006662DF /* CustomUserDefaults.swift in Sources */,
 				517945042095ACA900D45A55 /* UIViewControllerExtension.swift in Sources */,
 				517945102095AF4700D45A55 /* GetItemList.swift in Sources */,
 				517945122095AF9800D45A55 /* Item.swift in Sources */,
@@ -374,11 +409,14 @@
 				517945002095ACA900D45A55 /* NumberExtension.swift in Sources */,
 				517944FD2095ACA900D45A55 /* Queue.swift in Sources */,
 				517945012095ACA900D45A55 /* Sequence+GroupBy.swift in Sources */,
+				512FE6142097646C006662DF /* TapActionCell.swift in Sources */,
+				512FE6102097645B006662DF /* SwitchActionCell.swift in Sources */,
 				517945032095ACA900D45A55 /* UITableViewExtension.swift in Sources */,
 				517944FF2095ACA900D45A55 /* CustomColor.swift in Sources */,
 				517944D52095AA9200D45A55 /* AppDelegate.swift in Sources */,
 				5179450B2095ACA900D45A55 /* NetworkRequest.swift in Sources */,
 				517945162095BE4700D45A55 /* MainViewModel.swift in Sources */,
+				512FE603209763FE006662DF /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
