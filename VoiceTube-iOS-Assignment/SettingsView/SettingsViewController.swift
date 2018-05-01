@@ -15,19 +15,21 @@ internal final class SettingsViewController: UIViewController, Navigable {
     var navigationBar: ColorgyNavigationBar = ColorgyNavigationBar()
     let tableView: UITableView = UITableView()
     
-    let tableContent: [(title: String, type: UITableViewCell.Type)] =
-        [(title: "自動播放", SwitchActionCell.self),
-         (title: "字幕同步",  SwitchActionCell.self),
-         (title: "查詢單字時暫停播放", SwitchActionCell.self),
-         (title: "推薦影片提醒", SwitchActionCell.self),
-         (title: "學習通知", TapActionCell.self)]
+    let tableContent: [SettingRow] =
+    [SwitchRow.init(title: "自動播放", switchValue: Defaults[.autoPlay], action: { (row) in Defaults[.autoPlay] = (row as! SwitchRow).switchValue }),
+     SwitchRow.init(title: "字幕同步", switchValue: Defaults[.subtitleEnabled], action: { row in Defaults[.subtitleEnabled] = (row as! SwitchRow).switchValue }),
+     SwitchRow.init(title: "查詢影片時暫停播放", switchValue: Defaults[.stopWhileQuerying], action: { row in Defaults[.stopWhileQuerying] = (row as! SwitchRow).switchValue }),
+     SwitchRow.init(title: "推薦影片提醒", switchValue: Defaults[.recommendationNotifiable], action: { row in Defaults[.recommendationNotifiable] = (row as! SwitchRow).switchValue }),
+     TimeRow.init(title: "學習通知", date: Defaults[.dailyRemindTime]!, action: { row in Defaults[.dailyRemindTime] = (row as! TimeRow).date })]
+    
+
     
     // MARK: - Delegate
     var navigationTransitionDelegate: ColorgyNavigationTransitioningDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         view.isUserInteractionEnabled = true
 
         // Do any additional setup after loading the view.
@@ -73,10 +75,15 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(of: tableContent[indexPath.row].type, for: indexPath)!
-        (cell as? SwitchActionCell)?.set(title: tableContent[indexPath.row].title, isOn: true)
+        let row = tableContent[indexPath.row]
+        let cell = tableView.dequeueReusableCell(of: row.cellType, for: indexPath)!
+        (cell as? SwitchActionCell)?.set(title: row.title, isOn: (row as? SwitchRow)?.switchValue ?? true)
         (cell as? SwitchActionCell)?.delegate = self
-        (cell as? TapActionCell)?.set(title: tableContent[indexPath.row].title, detail: "10:00 AM")
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        (cell as? TapActionCell)?.set(title: row.title, detail: dateFormatter.string(from: (row as? TimeRow)?.date ?? Date()))
+        (cell as? TapActionCell)?.delegate = self
         
         return cell
     }
@@ -88,13 +95,20 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension SettingsViewController: SwitchActionCellDelegate {
     func switchActionCellSwitch(cell: SwitchActionCell, isOn: Bool) {
-        guard let title = cell.titleLabel.text else { return }
-        switch title {
-        case "自動播放": Defaults[.autoPlay] = isOn
-        case "字幕同步": Defaults[.subtitleEnabled] = isOn
-        case "查詢單字時暫停播放": Defaults[.stopWhileQuerying] = isOn
-        case "推薦影片提醒": Defaults[.recommendationNotifiable] = isOn
-        default: break
+        guard let rowIndex = tableView.indexPath(for: cell)?.row else { return }
+        if let row = tableContent[rowIndex] as? SwitchRow {
+            row.switchValue = isOn
+            row.action?(row)
+        }
+    }
+}
+
+extension SettingsViewController: TapActionCellDelegate {
+    func tapActionCellTimeDidChanged(cell: TapActionCell, to date: Date) {
+        guard let rowIndex = tableView.indexPath(for: cell)?.row else { return }
+        if let row = tableContent[rowIndex] as? TimeRow {
+            row.date = date
+            row.action?(row)
         }
     }
 }
