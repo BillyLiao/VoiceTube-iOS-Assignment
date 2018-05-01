@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftyUserDefaults
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if Defaults[.hasLaunchedBefore] == false {
+            setupDefaults()
+        }
+        
         return true
     }
 
@@ -41,6 +46,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    private func setupDefaults() {
+        Defaults[.hasLaunchedBefore] = true
+        Defaults[.autoPlay] = true
+        Defaults[.subtitleEnabled] = true
+        Defaults[.stopWhileQuerying] = true
+        Defaults[.recommendationNotifiable] = true
+        Defaults[.dailyRemindTime] = Calendar.current.date(bySettingHour: 10, minute: 0, second: 0, of: Date())
+    }
 }
 

@@ -10,9 +10,12 @@ import Foundation
 import SwiftyUserDefaults
 
 extension DefaultsKeys {
+    static let hasLaunchedBefore = DefaultsKey<Bool>("hasLaunchedBefore")
+    
+    // MARK: - Settings
     static let autoPlay = DefaultsKey<Bool>("autoPlay")
     static let subtitleEnabled = DefaultsKey<Bool>("subtitleEnabled")
     static let stopWhileQuerying = DefaultsKey<Bool>("stopWhileQuerying")
     static let recommendationNotifiable = DefaultsKey<Bool>("recommendationNotifiable")
-    static let notificationTime = DefaultsKey<Date>("notificationTime")
+    static let dailyRemindTime = DefaultsKey<Date?>("dailyRemindTime")
 }
