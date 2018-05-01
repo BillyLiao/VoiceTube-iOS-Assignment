@@ -12,7 +12,6 @@ import RealmSwift
 protocol RealmObjectType: class where Self: Object {
     var id: String { get set }
     
-    
     func save(_ completionHandler: ((_ succeed: Bool) -> Void)?)
 }
 
