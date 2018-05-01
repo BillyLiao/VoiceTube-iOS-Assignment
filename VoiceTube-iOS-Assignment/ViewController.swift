@@ -21,7 +21,7 @@ internal final class ViewController: UIViewController, Navigable {
     var viewModel: MainViewModel = MainViewModel()
     
     // MARK: - Delegate
-    var navigationTransitionDelegate: ColorgyNavigationTransitioningDelegate?
+    var navigationTransitionDelegate: ColorgyNavigationTransitioningDelegate? = ColorgyNavigationTransitioningDelegate()
     
     // MARK: - DisposeBag
     private let disposeBag = DisposeBag()
@@ -54,8 +54,8 @@ internal final class ViewController: UIViewController, Navigable {
     // MARK: - View Configuration
     func configureNavigationBar() {
         view.addSubview(navigationBar)
-        
         navigationBar.setButton(at: .right, type: .settings)
+        navigationBar.delegate = self
     }
     
     private func configureTableView() {
@@ -82,3 +82,10 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
+extension ViewController: ColorgyNavigationBarDelegate {
+    func colorgyNavigationBarSettingsButtonClicked() {
+        let vc = SettingsViewController()
+        navigationTransitionDelegate?.presentingViewController = vc
+        asyncPresent(vc, animated: true)
+    }
+}
