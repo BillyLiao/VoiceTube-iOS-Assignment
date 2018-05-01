@@ -23,4 +23,9 @@ public struct Item: JSONDecodable {
         self.title = title
         self.imageURL = imageURL
     }
+    
+    init(with realmObject: ItemRealmObject) {
+        self.title = realmObject.title
+        self.imageURL = URL(string: realmObject.imageURLString)!
+    }
 }
